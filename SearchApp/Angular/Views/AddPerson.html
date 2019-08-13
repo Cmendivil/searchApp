@@ -1,0 +1,51 @@
+﻿<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" style="cursor: pointer" href="/">Home</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<h1> Add Person</h1>
+
+<div class="container">
+    <form data-ng-submit="sendForm()" name="myForm">
+        <div class="alert alert-danger" role="alert" ng-model="error" ng-show="error">
+            {{error}}
+        </div>
+        <div class="form-group">
+            <label> First Name </label>
+            <input ng-model="model.first_name" type="text" class="form-control" name="first_name" required />
+        </div>
+
+        <div class="form-group">
+            <label> Last Name </label>
+            <input ng-model="model.last_name" type="text" class="form-control" name="last_name" required />
+        </div>
+
+        <div class="form-group">
+            <label> Address </label>
+            <input ng-model="model.address" type="text" class="form-control" name="address" required />
+        </div>
+
+        <div class="form-group">
+            <label> Interest </label>
+            <input ng-model="model.interest" type="text" class="form-control" name="interest" required />
+        </div>
+
+        <div class="form-group">
+            <label> Age </label>
+            <input ng-model="model.age" type="number" class="form-control" name="age" required />
+        </div>
+
+        <div class="form-group">
+            <label> Picture </label>
+            <br />
+            <file-input id="files"  on-change="uploadPicture($event)" ng-model="model.picture"></file-input>
+        </div>
+
+        <input class="btn btn-secondary btn-lg active" type="submit" value="Submit">
+    </form>
+</div>
